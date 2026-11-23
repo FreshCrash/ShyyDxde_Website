@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShyyDxde - Music Artist Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #160a38 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(20, 20, 35, 0.8);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(138, 43, 226, 0.4);
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #8a2be2;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.6);
+            margin-bottom: 25px;
+        }
+        .artist-name {
+            font-size: 3em;
+            background: linear-gradient(90deg, #8aabe2, #af0fff, #8a5be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        .artist-tagline {
+            font-size: 1.3em;
+            color: #d8b4fe;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+        }
+        .social-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #b8b8d8;
+            transition: all 0.3s ease;
+            padding: 25px 20px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            min-width: auto;
+            width: auto;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .social-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #b8b8d8;
+            transition: all 0.3s ease;
+            padding: 25px 20px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            min-width: 150px;
+            max-width: 200px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .social-link img {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            display: block;
+        }
+        .social-link span, .social-link small {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .social-link:hover {
+            background: linear-gradient(135deg, #8a2be2, #6a1b9a);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.5);
+        }
+        .social-link img {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            object-fit: contain;
+        }
+        .social-link span, .social-link small {
+            font-size: 1em;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .social-link img {
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            object-fit: contain;
+        }
+        .social-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #b8b8d8;
+            transition: all 0.3s ease;
+            padding: 25px 20px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            min-width: auto;
+            flex: 1;
+            text-align: center;
+            vertical-align: middle;
+        }
+        }
+        .social-link:hover {
+            background: linear-gradient(135deg, #8a2be2, #6a1b9a);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.5);
+            transition: all 0.3s ease;
+        }
+        .social-link img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            object-fit: contain;
+        }
+        .social-link span {
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+        .social-link:nth-child(1) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(2) { border-color: rgba(138, 43, 226, 0.5); color: #ffffff; }
+        .social-link:nth-child(3) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(4) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(5) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(6) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(7) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(8) { border-color: rgba(138, 43, 226, 0.5); }
+        .social-link:nth-child(9) { border-color: rgba(138, 43, 226, 0.5); }
+        h2 {
+            color: #e0aaff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            color: #b8b8d8;
+            line-height: 1.8;
+            font-size: 1.1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/static/res/logo.png" alt="ShyyDxde Profile Picture" class="profile-pic">
+            <h1 class="artist-name">ShyyDxde</h1>
+            <p class="artist-tagline">An electronic music producer, mainly focusing on atmospheric dnb, jungle and breakcore, but also exploring other genres</p>
+        </header>
+        <div class="content">
+            <h2>Welcome to My Music Artist Profile</h2>
+            <p>This is your blank starting page. Let's build something amazing!</p>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-spotify.png" alt="Spotify">
+                <span>Spotify</span>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-tidal.png" alt="Tidal">
+                <small>Tidal</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-deezer.png" alt="Deezer">
+                <small>Deezer</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-apple-music.png" alt="Apple Music">
+                <small>Apple Music</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-soundcloud.png" alt="SoundCloud">
+                <small>SoundCloud</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-yandex-music.png" alt="Yandex Music">
+                <small>Yandex Music</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-amazon-music.png" alt="Amazon Music">
+                <small>Amazon Music</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-bandcamp.png" alt="Bandcamp">
+                <small>Bandcamp</small>
+            </a>
+            <a href="#" class="social-link">
+                <img src="/static/res/logo-tiktok.png" alt="TikTok">
+                <small>TikTok</small>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
